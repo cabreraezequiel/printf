@@ -10,6 +10,14 @@
  * @f: The function associated
  */
 
+typedef struct format
+{
+	char *op;
+	void (*f)(va_list);
 
+} Tformat;
+
+
+int _printf(const char *format, ...);
 
 #endif /* MAIN_H */

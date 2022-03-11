@@ -1,34 +1,19 @@
 #include "main.h"
 
 /**
- *
- *
+ * _printf - printf
+ * @format : string
  *
  */
+
 int _printf(const char *format, ...)
 {
-	int count = 0, int = 0;
-	va_list ap;
-	str
-		va_struct type[] = {
-		{'c', print_char},
-		{'i', print_int},
-		{'f', print_float},
-		{'s', print_string},
-		{'\0', NULL}
+	
+Tformat form[] = {
+		{"c", print_char},
+		{"s", print_str},
+		{"d", print_d},
+		{"i", print_int},
+		{NULL, NULL}
 	};
-
-	va_start(ap, string?)
-		while
-		{
-			str = (va_arg(ap, char *));
-			if string[n] == %;
-			n++;
-			while
-				if string[n] == type[i];
-			symbol[i].fun(ap);
-			count ++;
-			else
-				print_char(string[n]);
-		}
 }
