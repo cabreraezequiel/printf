@@ -13,27 +13,40 @@ int _printf(const char *str, ...)
 	Tformat form[] = {
 		{"c", print_char},
 		{"s", print_str},
+		{"d", print_d},
+		{"i", print_i},
 		{NULL, NULL}
 	};
 
 	va_start(ap, str);
-		while (str[n] != '\0')
+
+	if (!str || (str[0] == '%' && str[1] == '\0'))
+		return (-1);
+
+	while (str[n] != '\0')
+	{
+		if (str[n] == '%')
 		{
+			n++;
 			if (str[n] == '%')
 			{
-				n++;
-				for (i = 0; form[i].op != NULL; i++)
-				{
-					if (str[n] == *form[i].op)
-					{
-						form[i].f(ap);
-					}
-				}
-				n++;
+				count++;
+				_putchar('%');
 			}
-			_putchar(str[n]);
+
+			for (i = 0; form[i].op != NULL; i++)
+			{
+				if (str[n] == *form[i].op)
+				{
+					count =  count + form[i].f(ap);
+				}
+			}
 			n++;
 		}
+		_putchar(str[n]);
+		count++;
+		n++;
+	}
 	va_end(ap);
 	return (count);
 }

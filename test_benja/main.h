@@ -17,13 +17,15 @@
 typedef struct format
 {
 	char *op;
-	void (*f)(va_list);
+	int (*f)(va_list);
 
 } Tformat;
 
 int _putchar(char c);
 int _printf(const char *str, ...);
-void print_char(va_list c);
-void print_str(va_list s);
+int print_char(va_list c);
+int print_str(va_list s);
+int print_i(va_list i);
+int print_d(va_list d);
 
 #endif /* MAIN_H */
