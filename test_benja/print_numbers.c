@@ -46,7 +46,7 @@ int print_i(va_list i)
 
 int print_d(va_list d)
 {
-if (d)
-{}
-return (0);
+	int n = va_arg(d, int);
+
+        return (print_number(n, 0));
 }
