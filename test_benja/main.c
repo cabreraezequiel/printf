@@ -18,7 +18,7 @@ int main(void)
     len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
     ui = (unsigned int)INT_MAX + 1024;
-    addr = (void *)0x7ffe637541f0;
+    addr = ((void *)0x7ffe637541f0);
     t = _printf("Length:[%d, %i]\n", len, len);
     printf("%d\n",t);
     t = printf("Length:[%d, %i]\n", len2, len2);
@@ -35,10 +35,14 @@ int main(void)
     printf("%d\n",t);
     t = printf("Binario:[%d]\n", 1100010);
     printf("%d\n",t);
-    _printf("Unsigned octal:[%o]\n", ui);
-    printf("Unsigned octal:[%o]\n", ui);
-    _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-    printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
+    t = _printf("Unsigned octal:[%o]\n", ui);
+    printf("%d\n",t);
+    t = printf("Unsigned octal:[%o]\n", ui);
+    printf("%d\n",t);
+    t =_printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
+    printf("%d\n",t);
+    t = printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
+    printf("%d\n",t);
     _printf("Character:[%c]\n", 'H');
     printf("Character:[%c]\n", 'H');
     _printf("String:[%r]\n", "I am a string !");

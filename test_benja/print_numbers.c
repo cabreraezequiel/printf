@@ -52,7 +52,6 @@ int print_i(va_list i)
  * Return: strlen
  */
 
-
 int print_d(va_list d)
 {
 	int n = va_arg(d, int);
@@ -70,6 +69,7 @@ int print_d(va_list d)
 
         return (cont);
 }
+
 
 /**
  * print_number_u - Entry point
@@ -118,7 +118,7 @@ int print_u(va_list u)
 int print_b(va_list b)
 {
 	int n = va_arg(b, int);
-	int a[100];
+	int a[22];
 	int i = 0, cont = 0;
 
 	for(i = 0; n > 0; i++)
@@ -145,7 +145,7 @@ int print_o(va_list o)
 {
 
 	unsigned int n = va_arg(o, int);
-        int a[20];
+        int a[11];
         int i = 0, cont = 0;
 
         for(i = 0; n > 0; i++)
@@ -161,3 +161,82 @@ int print_o(va_list o)
         }
         return (cont);
 }
+
+/**
+ * print_x - print x
+ * @x : hexadecimal
+ * Return: strlen
+ */
+
+int print_x(va_list x)
+{
+	char hexa[] = "0123456789abcdef";
+        unsigned int n = va_arg(x, unsigned int);
+        int a[8];
+        int i = 0, cont = 0;
+
+        for(i = 0; n > 0; i++)
+        {
+                a[i] = n % 16;
+                n = n / 16;
+                cont++;
+        }
+
+        for(i -= 1; i >= 0; i--)
+        {
+                _putchar(hexa[a[i]]);
+        }
+        return (cont);
+}
+
+/**
+ * print_X - print X
+ * @X : hexadecimal
+ * Return: strlen
+ */
+
+int print_X(va_list X)
+{
+        char hexa[] = "0123456789ABCDEF";
+        unsigned long int n = va_arg(X, unsigned long int);
+        int a[8];
+        int i = 0, cont = 0;
+
+        for(i = 0; n > 0; i++)
+        {
+                a[i] = n % 16;
+                n = n / 16;
+                cont++;
+        }
+
+        for(i -= 1; i >= 0; i--)
+        {
+                _putchar(hexa[a[i]]);
+        }
+        return (cont);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
