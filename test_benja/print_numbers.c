@@ -3,26 +3,24 @@
 /**
  * print_number - Entry point
  * @n : int
- * Return: 0
+ *
  */
 
-int print_number(int n, int cont)
+void print_number(int n)
 {
 	unsigned int i = n;
-
+	
 	if (n < 0)
 	{
 		_putchar('-');
 		i = -n;
-		cont++;
 	}
 
 	if (i / 10)
-		print_number(i / 10, cont++);
-	
+	{
+		print_number(i / 10);
+	}
 	_putchar((i % 10) + '0');
-
-	return (cont);
 }
 
 /**
@@ -33,9 +31,19 @@ int print_number(int n, int cont)
 
 int print_i(va_list i)
 {
-	int n = va_arg(i, int);
+	int n = va_arg(i, int), cont = 1;
 
-	return (print_number(n, 0));
+	print_number(n);
+			
+	if (n < 0)
+		cont++;
+	while (n / 10 != 0)
+	{
+		cont++;
+		n = n / 10;
+	}
+
+	return (cont);
 }
 
 /**
@@ -47,27 +55,36 @@ int print_i(va_list i)
 
 int print_d(va_list d)
 {
-	unsigned int n = va_arg(d, int);
+	int n = va_arg(d, int);
+	int cont = 1;
 
-        return (print_number(n, 0));
+        print_number(n);
+	
+	if (n < 0)
+                cont++;
+        while (n / 10 != 0)
+        {
+                cont++;
+                n = n / 10;
+        }
+
+        return (cont);
 }
 
 /**
  * print_number_u - Entry point
  * @n : int
- * Return: 0
+ *
  */
 
-int print_number_u(int n, int cont)
+void print_number_u(int n)
 {
         unsigned int i = n;
 
         if (i / 10)
-                print_number_u(i / 10, cont++);
+                print_number_u(i / 10);
 
         _putchar((i % 10) + '0');
-
-        return (cont);
 }
 
 /**
@@ -78,9 +95,18 @@ int print_number_u(int n, int cont)
 
 int print_u(va_list u)
 {
-	int n = va_arg(u, int);
+	int n = va_arg(u, int), cont = 1;
 
-        return (print_number_u(n, 0));
+   	print_number_u(n);
+
+	 while (n / 10 != 0)
+        {
+                cont++;
+                n = n / 10;
+        }
+
+        return (cont);
+
 }
 
 /**
