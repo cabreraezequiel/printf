@@ -51,9 +51,9 @@ int print_d(va_list d)
 }
 
 /**
- * print_d - print d
- * @d : decmal
- * Return: strlen
+ * print_b - print b
+ * @b : b
+ * Return: 0
  */
 
 int print_b(va_list b)
@@ -67,5 +67,9 @@ int print_b(va_list b)
 		a[i] = n % 2;
 		n = n / 2;
 	}
-        return (print_number(a[i], 0));
+	for(i -= 1; i >= 0; i--)
+	{
+		_putchar(a[i] + '0');
+	}
+	return (0);
 }
