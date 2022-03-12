@@ -57,7 +57,7 @@ int print_S(va_list S)
 		{
 			_putchar('\\');
 			_putchar('x');
-			_putchar((n / 16) + '0');
+			_putchar(((n / 16) % 10) + '0');
 			for(j = 0; n > 0; j++)
 			{
 				a[j] = n % 16;
