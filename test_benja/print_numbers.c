@@ -117,8 +117,22 @@ int print_u(va_list u)
 
 int print_b(va_list b)
 {
-if (b){}
-return (0);
+	int n = va_arg(b, int);
+	int a[100];
+	int i = 0, cont = 0;
+
+	for(i = 0; n > 0; i++)
+	{
+		a[i] = n % 2;
+		n = n / 2;
+		cont++;
+	}
+	
+	for(i -= 1; i >= 0; i--)
+	{
+		_putchar(a[i] + '0');
+	}
+	return (cont);
 }
 
 /**
@@ -129,6 +143,21 @@ return (0);
 
 int print_o(va_list o)
 {
-if (o){}
-return (0);
+
+	unsigned int n = va_arg(o, int);
+        int a[20];
+        int i = 0, cont = 0;
+
+        for(i = 0; n > 0; i++)
+        {
+                a[i] = n % 8;
+                n = n / 8;
+                cont++;
+        }
+
+        for(i -= 1; i >= 0; i--)
+        {
+                _putchar(a[i] + '0');
+        }
+        return (cont);
 }

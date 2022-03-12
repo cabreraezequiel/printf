@@ -31,14 +31,18 @@ int main(void)
     printf("%d\n",t);
     t = printf("Unsigned:[%u]\n", ui);
     printf("%d\n",t);
-    _printf("Binario:[%b]\n", 98);
-    printf("Binario:[%d]\n", 1100010);
+    t =_printf("Binario:[%b]\n", 98);
+    printf("%d\n",t);
+    t = printf("Binario:[%d]\n", 1100010);
+    printf("%d\n",t);
     _printf("Unsigned octal:[%o]\n", ui);
     printf("Unsigned octal:[%o]\n", ui);
     _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
     printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
     _printf("Character:[%c]\n", 'H');
     printf("Character:[%c]\n", 'H');
+    _printf("String:[%r]\n", "I am a string !");
+    printf("String:[%s]\n", "! gnirts a ma I");
     _printf("String:[%s]\n", "I am a string !");
     printf("String:[%s]\n", "I am a string !");
     _printf("Address:[%p]\n", addr);
@@ -47,7 +51,5 @@ int main(void)
     len2 = printf("Percent:[%%]\n");
     _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
-    _printf("Unknown:[%r]\n");
-    printf("Unknown:[%r]\n");
     return (0);
 }

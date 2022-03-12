@@ -30,5 +30,6 @@ int print_d(va_list d);
 int print_u(va_list u);
 int print_b(va_list b);
 int print_o(va_list o);
+int print_r(va_list r);
 
 #endif /* MAIN_H */
