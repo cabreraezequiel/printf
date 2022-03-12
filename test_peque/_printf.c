@@ -16,6 +16,7 @@ int _printf(const char *str, ...)
 		{"d", print_d},
 		{"i", print_i},
 		{"b", print_b},
+		{"S", print_S},
 		{NULL, NULL}
 	};
 

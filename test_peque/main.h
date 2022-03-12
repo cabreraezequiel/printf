@@ -28,5 +28,6 @@ int print_str(va_list s);
 int print_i(va_list i);
 int print_d(va_list d);
 int print_b(va_list b);
+int print_S(va_list S);
 
 #endif /* MAIN_H */

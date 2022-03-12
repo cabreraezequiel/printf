@@ -59,9 +59,10 @@ int print_d(va_list d)
 int print_b(va_list b)
 {
 	int n = va_arg(b, int);
-	int a[100];
+	int *a;
 	int i = 0;
 
+	a = malloc(sizeof(a) * n);
 	for(i = 0; n > 0; i++)
 	{
 		a[i] = n % 2;
@@ -71,5 +72,6 @@ int print_b(va_list b)
 	{
 		_putchar(a[i] + '0');
 	}
+	free (a);
 	return (0);
 }
