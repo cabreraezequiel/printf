@@ -43,7 +43,7 @@ int print_S(va_list S)
 	char *aux = va_arg(S, char *);
 	int i = 0, j = 0;
 	unsigned int n = 0;
-	int a[20];
+	int a[1];
 
 	if (aux == NULL)
 	{
