@@ -15,6 +15,9 @@ int _printf(const char *str, ...)
 		{"s", print_str},
 		{"d", print_d},
 		{"i", print_i},
+		{"u", print_u},
+		{"b", print_b},
+		{"o", print_o},
 		{NULL, NULL}
 	};
 
@@ -33,6 +36,8 @@ int _printf(const char *str, ...)
 				count++;
 				_putchar('%');
 			}
+			if (str[n] == '\0')
+				return (-1);
 
 			for (i = 0; form[i].op != NULL; i++)
 			{
