@@ -41,8 +41,9 @@ int print_S(va_list S)
 {
 	char hexa[] = "0123456789ABCDEF";
 	char *aux = va_arg(S, char *);
-	int i = 0, j = 0, n = 0;
-	int a[8];
+	int i = 0, j = 0;
+	unsigned int n = 0;
+	int a[20];
 
 	if (aux == NULL)
 	{
@@ -56,6 +57,7 @@ int print_S(va_list S)
 		{
 			_putchar('\\');
 			_putchar('x');
+			_putchar((n / 16) + '0');
 			for(j = 0; n > 0; j++)
 			{
 				a[j] = n % 16;
