@@ -48,10 +48,6 @@ int print_r(va_list r)
         char *aux = va_arg(r, char *);
         int i = 0, cont = 0;
 
-        if (aux == NULL)
-        {
-		aux = "(nil)";
-        }
 	for (i = 0; aux[i] != '\0'; i++)
         {
         }
