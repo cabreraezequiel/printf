@@ -31,13 +31,6 @@ int _printf(const char *str, ...)
 		if (str[n] == '%')
 		{
 			n++;
-			if (str[n] == '%')
-			{
-				count++;
-				_putchar('%');
-			}
-
-
 			if (str[n] == '+')
 			{
 				n++;
@@ -54,7 +47,13 @@ int _printf(const char *str, ...)
 					_putchar(' ');
 				}
 			}
-			n++;
+			
+			if (str[n] == '%')
+			{
+				count++;
+				_putchar('%');
+			}
+
 
 			for (i = 0; form[i].op != NULL; i++)
 			{
