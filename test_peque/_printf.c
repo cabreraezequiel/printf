@@ -8,7 +8,7 @@
 
 int _printf(const char *str, ...)
 {
-	int count = 0, n = 0, i = 0;
+	int count = 0, n = 0, i = 0, spaces = 0, j = 0;
 	va_list ap;
 	Tformat form[] = {
 		{"c", print_char},
@@ -19,6 +19,7 @@ int _printf(const char *str, ...)
 		{"S", print_S},
 		{NULL, NULL}
 	};
+	char *pluscount;
 
 	va_start(ap, str);
 
@@ -35,6 +36,25 @@ int _printf(const char *str, ...)
 				count++;
 				_putchar('%');
 			}
+
+
+			if (str[n] == '+')
+			{
+				n++;
+				pluscount = malloc(sizeof(str));
+				while (str[n] >= '0' && str[n] <='9')
+				{
+					pluscount[j] = str[n];
+					j++, n++;
+				}
+				spaces = atoi(pluscount);
+				free(pluscount);
+				for (j = 0; j < spaces; j++)
+				{
+					_putchar(' ');
+				}
+			}
+			n++;
 
 			for (i = 0; form[i].op != NULL; i++)
 			{
