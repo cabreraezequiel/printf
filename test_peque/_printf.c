@@ -17,6 +17,7 @@ int _printf(const char *str, ...)
 		{"i", print_i},
 		{"b", print_b},
 		{"S", print_S},
+		{"R", print_rot},
 		{NULL, NULL}
 	};
 	char *pluscount;
@@ -35,7 +36,7 @@ int _printf(const char *str, ...)
 			{
 				n++;
 				pluscount = malloc(sizeof(str));
-				while (str[n] >= '0' && str[n] <='9')
+				while (str[n] >= '0' && str[n] <= '9')
 				{
 					pluscount[j] = str[n];
 					j++, n++;
@@ -47,7 +48,7 @@ int _printf(const char *str, ...)
 					_putchar(' ');
 				}
 			}
-			
+
 			if (str[n] == '%')
 			{
 				count++;

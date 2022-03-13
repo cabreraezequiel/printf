@@ -29,5 +29,6 @@ int print_i(va_list i);
 int print_d(va_list d);
 int print_b(va_list b);
 int print_S(va_list S);
+int print_rot(va_list R);
 
 #endif /* MAIN_H */
