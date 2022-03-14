@@ -9,7 +9,7 @@
 int print_rot(va_list R)
 {
 	char *aux = va_arg(R, char *);
-	int i = 0, j = 0, m = 0;
+	int i = 0, j = 0, m = 0, cont = 0;
 	char abc[26] = "ABCDEFGHIJKLMabcdefghijklm";
 	char rot[26] = "NOPQRSTUVWXYZnopqrstuvwxyz";
 
@@ -28,18 +28,23 @@ int print_rot(va_list R)
 			{
 				_putchar(rot[j]);
 				m = 1;
+				cont++;
 			}
 		}
 		for (j = 0; rot[j] != '\0'; j++)
 		{
 			if (aux[i] == rot[j])
 			{
-				_putchar(abc[j]);;
+				_putchar(abc[j]);
 				m = 1;
+				cont++;
 			}
 		}
 		if (m != 1)
+		{
 			_putchar(aux[i]);
+			cont++;
+		}
 	}
 	return (i);
 }
