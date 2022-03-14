@@ -1,15 +1,12 @@
 #include "main.h"
-
 /**
- * _printf - printf
- * @str - string
- * Resturn: int
+ * aux - printf
+ * @c : char
+ * Return: int
  */
 
-int _printf(const char *str, ...)
+int (*aux(char c))(va_list)
 {
-	int count = 0, n = 0, i = 0;
-	va_list ap;
 	Tformat form[] = {
 		{"c", print_char},
 		{"s", print_str},
@@ -26,6 +23,28 @@ int _printf(const char *str, ...)
 		{"R", print_rot},
 		{NULL, NULL}
 	};
+	int i;
+
+	for (i = 0; form[i].op != NULL; i++)
+	{
+		if (c == *form[i].op)
+			break;
+	}
+	return (form[i].f);
+}
+
+
+
+/**
+ * _printf - printf
+ * @str : string
+ * Return: int
+ */
+
+int _printf(const char *str, ...)
+{
+	int count = 0, n = 0;
+	va_list ap;
 
 	if (str == NULL || (str[0] == '%' && str[1] == '\0'))
 		return (-1);
@@ -49,16 +68,12 @@ int _printf(const char *str, ...)
 			}
 			else
 			{
-			for (i = 0; form[i].op != NULL; i++)
+			if (aux(str[n]) != NULL)
 			{
-				if (str[n] == *form[i].op)
-				{
-					count =  count + form[i].f(ap);
-					break;
-				}
+				count += aux(str[n])(ap);
 			}
-			if (form[i].op == NULL)
-			{	
+			if (aux(str[n]) == NULL)
+			{
 				_putchar('%');
 				_putchar(str[n]);
 				count += 2;
