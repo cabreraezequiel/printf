@@ -22,7 +22,7 @@ int print_r(va_list r)
 	}
 	cont = i;
 
-	for (i = cont; i >= 0; i--)
+	for ( ; i >= 0; i--)
 	{
 		_putchar(aux[i]);
 	}
