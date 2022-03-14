@@ -26,7 +26,7 @@ void print_number_u(int n)
 
 int print_u(va_list u)
 {
-	int n = va_arg(u, int), cont = 1;
+	unsigned int n = va_arg(u, int), cont = 1;
 
 	print_number_u(n);
 
@@ -71,7 +71,7 @@ int print_o(va_list o)
 }
 
 /**
- * print_x - print x
+ * print_x - print
  * @x: hexadecimal
  * Return: strlen
  */
