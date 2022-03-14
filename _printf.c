@@ -48,30 +48,23 @@ int _printf(const char *str, ...)
 
 	if (str == NULL || (str[0] == '%' && str[1] == '\0'))
 		return (-1);
-
 	va_start(ap, str);
-
 	while (str && str[n])
 	{
 		if (str[n] == '%')
 		{
 			n++;
 			if (str[n] == '\0')
-			{
 				return (-1);
-			}
 			if (str[n] == '%')
 			{
 				count++;
 				_putchar('%');
 
-			}
-			else
+			} else
 			{
 			if (aux(str[n]) != NULL)
-			{
 				count += aux(str[n])(ap);
-			}
 			if (aux(str[n]) == NULL)
 			{
 				_putchar('%');

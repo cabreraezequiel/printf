@@ -32,7 +32,7 @@ int print_u(va_list u)
 	{
 		_putchar('0');
 		cont++;
-	}	
+	}
 	print_number_u(n);
 
 	while (n / 10 != 0)
@@ -117,7 +117,7 @@ int print_x(va_list x)
 int print_X(va_list X)
 {
 	char hexa[] = "0123456789ABCDEF";
-	unsigned long int n = va_arg(X, unsigned long int);
+	unsigned int n = va_arg(X, unsigned int);
 	int a[8];
 	int i = 0, cont = 0;
 
