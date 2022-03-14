@@ -21,7 +21,7 @@ int _printf(const char *str, ...)
 		{"r", print_r},
 		{"x", print_x},
 		{"X", print_X},
-		{"p", print_x},
+		{"p", print_p},
 		{NULL, NULL}
 	};
 
