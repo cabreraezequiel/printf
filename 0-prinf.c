@@ -30,7 +30,7 @@ int print_str(va_list s)
 		aux = "(nil)";
 	}
 
-	for (i = 0; aux[i] != '\0'; i++)
+	for (i = 0; aux[i]; i++)
 	{
 		_putchar(aux[i]);
 	}
