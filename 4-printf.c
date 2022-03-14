@@ -32,7 +32,7 @@ int print_u(va_list u)
 	{
 		_putchar('0');
 		cont++;
-	}	
+	}
 	print_number_u(n);
 
 	while (n / 10 != 0)
