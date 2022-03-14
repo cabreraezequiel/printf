@@ -50,13 +50,17 @@ int _printf(const char *str, ...)
 				if (str[n] == *form[i].op)
 				{
 					count =  count + form[i].f(ap);
+					break;
 				}
 			}
 			n++;
 		}
-		_putchar(str[n]);
-		count++;
-		n++;
+		else
+		{
+			_putchar(str[n]);
+			count++;
+			n++;
+		}
 	}
 	va_end(ap);
 	return (count);
