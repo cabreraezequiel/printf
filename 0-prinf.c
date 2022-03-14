@@ -27,7 +27,7 @@ int print_str(va_list s)
 
 	if (aux == NULL)
 	{
-		aux = "(nil)";
+		aux = "(null)";
 	}
 
 	for (i = 0; aux[i]; i++)

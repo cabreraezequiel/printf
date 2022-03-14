@@ -45,8 +45,10 @@ int _printf(const char *str, ...)
 			{
 				count++;
 				_putchar('%');
-			}
 
+			}
+			else
+			{
 			for (i = 0; form[i].op != NULL; i++)
 			{
 				if (str[n] == *form[i].op)
@@ -54,6 +56,13 @@ int _printf(const char *str, ...)
 					count =  count + form[i].f(ap);
 					break;
 				}
+			}
+			if (form[i].op == NULL)
+			{	
+				_putchar('%');
+				_putchar(str[n]);
+				count += 2;
+			}
 			}
 			n++;
 		}
