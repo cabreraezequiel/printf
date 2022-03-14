@@ -8,11 +8,15 @@
 
 int print_b(va_list b)
 {
-	int n = va_arg(b, int);
-	int *a;
+	unsigned int n = va_arg(b, unsigned long int);
+	unsigned int a[1024];
 	int i = 0, cont = 0;
 
-	a = malloc(sizeof(a) * n);
+	if (n == 0)
+	{
+		_putchar('0');
+		cont++;
+	}
 	for (i = 0; n > 0; i++)
 	{
 		a[i] = n % 2;
@@ -24,6 +28,5 @@ int print_b(va_list b)
 	{
 		_putchar(a[i] + '0');
 	}
-	free(a);
 	return (cont);
 }
