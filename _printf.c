@@ -37,13 +37,15 @@ int _printf(const char *str, ...)
 		if (str[n] == '%')
 		{
 			n++;
+			if (str[n] == '\0')
+			{
+				return (-1);
+			}
 			if (str[n] == '%')
 			{
 				count++;
 				_putchar('%');
 			}
-			if (str[n] == '\0')
-				return (-1);
 
 			for (i = 0; form[i].op != NULL; i++)
 			{
