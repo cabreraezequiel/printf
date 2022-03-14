@@ -28,6 +28,11 @@ int print_u(va_list u)
 {
 	unsigned int n = va_arg(u, int), cont = 1;
 
+	if (u == 0)
+	{
+		_putchar('0');
+		cont++;
+	}	
 	print_number_u(n);
 
 	while (n / 10 != 0)
