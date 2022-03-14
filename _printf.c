@@ -2,14 +2,13 @@
 
 /**
  * _printf - printf
- * @str: string
- * Return: int
+ * @str - string
+ * Resturn: int
  */
 
 int _printf(const char *str, ...)
 {
-	int count = 0, n = 0, i = 0, zrs = 0, j = 0;
-	char *zerocount;
+	int count = 0, n = 0, i = 0;
 	va_list ap;
 	Tformat form[] = {
 		{"c", print_char},
@@ -44,25 +43,7 @@ int _printf(const char *str, ...)
 				_putchar('%');
 			}
 			if (str[n] == '\0')
-			{
 				return (-1);
-			}
-			if (str[n] == '0')
-			{
-				n++;
-				zerocount = malloc(sizeof(str));
-				while (str[n] >= '0' && str[n] <= '9')
-				{
-					zerocount[j] = str[n];
-					j++, n++;
-				}
-				zrs = atoi(zerocount) - j;
-				free(zerocount);
-				for (j = 0; j < zrs; j++)
-				{
-					_putchar('0');
-				}
-			}
 
 			for (i = 0; form[i].op != NULL; i++)
 			{
