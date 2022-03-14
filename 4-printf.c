@@ -84,7 +84,7 @@ int print_o(va_list o)
 int print_x(va_list x)
 {
 	char hexa[] = "0123456789abcdef";
-	unsigned int n = va_arg(x, unsigned int);
+	unsigned long int n = va_arg(x, unsigned long int);
 	int a[8];
 	int i = 0, cont = 0;
 
