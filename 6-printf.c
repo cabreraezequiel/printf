@@ -12,7 +12,16 @@ int print_p(va_list p)
 	unsigned long int n = va_arg(p, unsigned long int);
 	int a[20];
 	int i = 0, cont = 0;
-
+	
+	if (n == 0)
+	{
+	_putchar('(');
+	_putchar('n');
+	_putchar('i');
+	_putchar('l');
+	_putchar(')');
+	return (5);
+	}
 	_putchar('0');
 	_putchar('x');
 	cont += 2;
