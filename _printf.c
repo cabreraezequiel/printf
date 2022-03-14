@@ -27,12 +27,12 @@ int _printf(const char *str, ...)
 		{NULL, NULL}
 	};
 
-	va_start(ap, str);
-
 	if (!str || (str[0] == '%' && str[1] == '\0'))
 		return (-1);
 
-	while (str[n] != '\0')
+	va_start(ap, str);
+
+	while (str && str[n])
 	{
 		if (str[n] == '%')
 		{
