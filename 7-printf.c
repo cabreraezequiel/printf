@@ -11,15 +11,14 @@ int print_S(va_list S)
 	char hexa[] = "0123456789ABCDEF";
 	char *aux = va_arg(S, char *);
 	int i = 0, j = 0;
-	unsigned int n = 0;
-	int a[1];
+	unsigned long int n = 0;
+	int a[10];
 
-	if (aux == NULL)
+	if (aux == 0)
 	{
-		aux = "(nil)";
 		return (0);
 	}
-	for (i = 0; aux[i] != '\0'; i++)
+	for (i = 0; aux[i]; i++)
 	{
 		n = aux[i];
 		if ((n > 0 && n < 32) || (n >= 127))
@@ -32,8 +31,9 @@ int print_S(va_list S)
 				a[j] = n % 16;
 				n = n / 16;
 			}
-			for (j -= 1 ; j >= 0; j--)
+			for (j -= 1; j >= 0; j--)
 			{
+				_putchar(hexa[aux[i]]);
 				_putchar(hexa[a[j]]);
 			}
 		}
