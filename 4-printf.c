@@ -51,6 +51,11 @@ int print_o(va_list o)
 	int a[11];
 	int i = 0, cont = 0;
 
+	if (n == 0)
+	{
+		_putchar('0');
+		cont++;
+	}
 	for (i = 0; n > 0; i++)
 	{
 		a[i] = n % 8;
@@ -78,6 +83,12 @@ int print_x(va_list x)
 	int a[8];
 	int i = 0, cont = 0;
 
+	if (n == 0)
+	{
+		_putchar('0');
+		cont++;
+	}
+
 	for (i = 0; n > 0; i++)
 	{
 		a[i] = n % 16;
@@ -104,6 +115,12 @@ int print_X(va_list X)
 	unsigned long int n = va_arg(X, unsigned long int);
 	int a[8];
 	int i = 0, cont = 0;
+
+	if (n == 0)
+	{
+		_putchar('0');
+		cont++;
+	}
 
 	for (i = 0; n > 0; i++)
 	{
