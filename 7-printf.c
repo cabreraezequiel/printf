@@ -33,7 +33,6 @@ int print_S(va_list S)
 			}
 			for (j -= 1; j >= 0; j--)
 			{
-				_putchar(hexa[aux[i]]);
 				_putchar(hexa[a[j]]);
 			}
 		}
