@@ -25,7 +25,7 @@ int print_S(va_list S)
 	for (i = 0; aux[i]; i++)
 	{
 		n = aux[i];
-		if (n > 0 && n < 32)
+		if ((n > 0 && n < 32) || n >= 127)
 		{
 			_putchar('\\');
 			_putchar('x');
