@@ -13,7 +13,9 @@ int print_S(va_list S)
 	int i = 0, j = 0, cont = 0;
 	int n = 0;
 	int a[10];
-
+	
+	if (aux == NULL)
+		return(0);
 	for (i = 0; aux[i]; i++)
 	{
 		n = aux[i];
