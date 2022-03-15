@@ -15,7 +15,9 @@ int print_S(va_list S)
 	int a[10];
 	
 	if (aux == NULL)
-		return(0);
+	{	
+		return(5);
+	}
 	for (i = 0; aux[i]; i++)
 	{
 		n = aux[i];
@@ -23,6 +25,7 @@ int print_S(va_list S)
 		{
 			_putchar('\\');
 			_putchar('x');
+			cont += 2;
 			for (j = 0; n > 0; j++)
 			{
 				a[j] = n % 16;
