@@ -18,8 +18,7 @@ int print_S(va_list S)
 	{
 		_putchar('(');
 		_putchar('n');
-		_putchar('u');
-		_putchar('l');
+		_putchar('I');
 		_putchar('l');
 		_putchar(')');
 		return (5);
@@ -27,7 +26,7 @@ int print_S(va_list S)
 	for (i = 0; aux[i]; i++)
 	{
 		n = aux[i];
-		if (n < 32)
+		if (n > 0 && n < 32)
 		{
 			_putchar('\\');
 			_putchar('x');
@@ -46,5 +45,5 @@ int print_S(va_list S)
 		else
 			_putchar(aux[i]);
 	}
-	return (0);
+	return (i + 2);
 }
