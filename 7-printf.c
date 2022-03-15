@@ -14,11 +14,13 @@ int print_S(va_list S)
 
 	if (aux == NULL)
 	{
-		_putchar('\\');
-		_putchar('x');
-		_putchar('0');
-		_putchar('0');
-		return (4);
+		_putchar('(');
+		_putchar('n');
+		_putchar('u');
+		_putchar('l');
+		_putchar('l');
+		_putchar(')');
+		return (6);
 	}
 	for (i = 0; aux[i]; i++)
 	{
