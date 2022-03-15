@@ -30,13 +30,16 @@ int print_S(va_list S)
 			_putchar('\\');
 			_putchar('x');
 			cont += 2;
+			if (n <= 16)
+			{
+				_putchar('0');
+				cont++;
+			}
 			for (j = 0; n > 0; j++)
 			{
 				a[j] = n % 16;
 				n = n / 16;
 			}
-			a[j] = n % 16;
-			j++;
 			for (j -= 1; j >= 0; j--)
 			{
 				_putchar(hexa[a[j]]);
