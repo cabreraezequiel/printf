@@ -10,9 +10,7 @@ int print_S(va_list S)
 {
 	char hexa[] = "0123456789ABCDEF";
 	char *aux = va_arg(S, char *);
-	int i = 0, j = 0, cont = 0;
-	int n = 0;
-	int a[10];
+	int i = 0, j = 0, cont = 0, n = 0, a[5];
 
 	if (aux == NULL)
 	{
