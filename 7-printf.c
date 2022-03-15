@@ -16,7 +16,7 @@ int print_S(va_list S)
 	
 	if (aux == NULL)
 	{	
-		return(5);
+		return(0);
 	}
 	for (i = 0; aux[i]; i++)
 	{
