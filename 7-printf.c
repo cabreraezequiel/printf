@@ -14,15 +14,6 @@ int print_S(va_list S)
 	int n = 0;
 	int a[10];
 
-	if (!aux)
-	{
-		_putchar('(');
-		_putchar('n');
-		_putchar('I');
-		_putchar('l');
-		_putchar(')');
-		return (5);
-	}
 	for (i = 0; aux[i]; i++)
 	{
 		n = aux[i];
@@ -46,7 +37,7 @@ int print_S(va_list S)
 		else
 		{
 			_putchar(aux[i]);
-			cont++
+			cont++;
 		}
 	}
 	return (cont);
